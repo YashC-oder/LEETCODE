@@ -1,3 +1,7 @@
+#include <vector>
+#include <string>
+#include <cmath>
+
 class Solution {
 private:
     string Space(int len) {
@@ -11,8 +15,8 @@ private:
             return text[0] + Space(maxWidth - length);
         }
 
-        int totalSpaces = maxWidth - length ;
-        int spaceBetweenWords = totalSpaces / (size - 1) +1;
+        int totalSpaces = maxWidth - length + size -1;
+        int spaceBetweenWords = totalSpaces / (size - 1);
         int extraSpaces = totalSpaces % (size - 1);
 
         string str = text[0];
