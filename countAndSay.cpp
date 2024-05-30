@@ -1,4 +1,5 @@
 class Solution {
+private:
 string rle(string str){
     
     string res = "";
