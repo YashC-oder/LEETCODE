@@ -21,14 +21,12 @@ public:
 
         double side     = INT_MAX;
         double diagonal = INT_MIN;
-        
+
         for(const double& sides : distances){
             side     = min(side,sides);
             diagonal = max(diagonal,sides);
         }
 
-        if(2*side != diagonal) return false;
-
-        return true;
+        return 2*side == diagonal? true : false;
     }
 };
