@@ -14,13 +14,14 @@ public:
         distances.insert(distanceSq(p4,p3));
         distances.insert(distanceSq(p3,p2));
 
-        double side     = INT_MAX;
-        double diagonal = INT_MIN;
 
         if(distances.size() != 2){
             return false;
         }
 
+        double side     = INT_MAX;
+        double diagonal = INT_MIN;
+        
         for(const double& sides : distances){
             side     = min(side,sides);
             diagonal = max(diagonal,sides);
