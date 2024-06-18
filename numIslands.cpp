@@ -11,6 +11,8 @@ private:
     }
 public:
     int numIslands(vector<vector<char>>& grid) {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
         int count = 0;
         row = grid.size();
         col = grid[0].size();
