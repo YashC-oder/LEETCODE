@@ -5,25 +5,28 @@ private:
         TreeNode* node = new TreeNode(root->val);
         TreeNode* left = FlattenBST(root->left);
         TreeNode* right = FlattenBST(root->right);
-
+        TreeNode* Head = left;
         while(left && left->right){
             left = left->right;
         }
         node->left = left;
         node->right = right;
-        if(node->left) node->left->right = node;
+        if(node->left){
+            node->left->right = node;
+        }else{
+            Head = node;
+        }
         if(node->right) node->right->left = node;
 
-        while(node && node->left){
-            node = node->left;
-        }
-        return node;
+        return Head;
     }
 
     TreeNode* head;
     TreeNode* current;
 public:
     BSTIterator(TreeNode* root) {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
         head = new TreeNode(0);
         head->right = FlattenBST(root);
         current = head;
