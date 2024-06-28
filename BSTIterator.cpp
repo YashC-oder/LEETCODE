@@ -67,7 +67,7 @@ public:
     }
     
     bool hasNext() {
-        if(current < size) return true;
+        if(current < size-1) return true;
         else return false;
     }
 };
