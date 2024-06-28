@@ -4,12 +4,13 @@ private:
         if(!root) return nullptr;
         TreeNode* node = new TreeNode(root->val);
         TreeNode* left = FlattenBST(root->left);
-        node->right = FlattenBST(root->right);
+        TreeNode* right = FlattenBST(root->right);
 
         while(left && left->right){
             left = left->right;
         }
         node->left = left;
+        node->right = right;
         if(node->left) node->left->right = node;
         if(node->right) node->right->left = node;
 
