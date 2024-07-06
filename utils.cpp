@@ -23,7 +23,7 @@ template<typename T>
 // Recursive Function:
 // This function handles multiple arguments by comparing the first argument with all others.
 template<typename T, typename ...Args>
-bool allEqual(const T& first, const Args&... args) {
+bool allEqual(const T& first, const Args&... args) { // here we can directly give arguments like (a,b,c,.....)
     return ((first == args) && ...);
 }
 
@@ -34,7 +34,7 @@ bool allEqual(const T& first, const Args&... args) {
 // It is used to check if all elements in a range satisfy a given predicate(boolean function).
 
 template<typename T>
-bool allEqual(std::initializer_list<T> values) {
+bool allEqual(std::initializer_list<T> values) {// here we need to provide list of arguments like ({a,b,c,.....})
     if (values.size() < 2) return true; // All values are trivially equal if the list is empty or has one element
     auto first = *values.begin();
     return std::all_of(values.begin(), values.end(), [first](const T& value) { return value == first; });
