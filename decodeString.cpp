@@ -17,6 +17,7 @@ public:
                 count = 0;
                 str = "";
             }else if(current == ']'){
+                // auto [counter , prefixStr] = st.top();
                 string prefixStr = st.top().second;
                 int counter = st.top().first;
                 st.pop();
