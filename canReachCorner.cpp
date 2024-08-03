@@ -1,7 +1,7 @@
 #include <vector>
 #include <queue>
 #include <iostream>
-
+// wrong solution failed at some testcases
 using namespace std;
 
 class Solution {
@@ -37,9 +37,6 @@ public:
             auto [x, y] = q.front();
             q.pop();
 
-            // Debugging: Print current coordinates
-            cout << "Visiting: (" << x << "," << y << ")" << endl;
-
             if (x == X && y == Y) {
                 return true;
             }
@@ -47,14 +44,9 @@ public:
             for (const auto& [dx, dy] : directions) {
                 int nx = x + dx;
                 int ny = y + dy;
-
-                // Check boundaries and if it's not visited and not inside any circle
                 if (nx >= 0 && ny >= 0 && nx <= X && ny <= Y && !visited[nx][ny] && !inSideCircle(nx, ny, circles)) {
                     visited[nx][ny] = true;
                     q.push({nx, ny});
-
-                    // Debugging: Print next coordinates to visit
-                    cout << "Pushing: (" << nx << "," << ny << ")" << endl;
                 }
             }
         }
