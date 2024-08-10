@@ -12,8 +12,7 @@ public:
             }
         }
         int h_index = size;
-        int papers = 0;
-        for(;h_index>=0;h_index--){
+        for(int papers = 0;h_index>=0;h_index--){
             papers += count[h_index];
             if(papers >= h_index) break;
         }
