@@ -1,7 +1,3 @@
-#include <vector>
-#include <functional>
-using namespace std;
-
 class Solution {
 public:
     int minDays(vector<vector<int>>& grid) {
